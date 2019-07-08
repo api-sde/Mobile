@@ -12,7 +12,7 @@ namespace SwiftShopXamarin.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public IDataStore<ShoppingItem> DataStore => DependencyService.Get<IDataStore<ShoppingItem>>() ?? new MockDataStore();
 
         bool isBusy = false;
         public bool IsBusy

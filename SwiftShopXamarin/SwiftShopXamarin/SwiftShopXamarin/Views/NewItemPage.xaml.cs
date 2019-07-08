@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SwiftShopXamarin.Models;
+using System;
 using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using SwiftShopXamarin.Models;
 
 namespace SwiftShopXamarin.Views
 {
@@ -13,16 +10,17 @@ namespace SwiftShopXamarin.Views
     [DesignTimeVisible(false)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public ShoppingItem Item { get; set; }
 
         public NewItemPage()
         {
             InitializeComponent();
 
-            Item = new Item
+            Item = new ShoppingItem
             {
                 Text = "Item name",
-                Description = "This is an item description."
+                Description = "This is an item description.",
+                Price = 1
             };
 
             BindingContext = this;
@@ -31,6 +29,7 @@ namespace SwiftShopXamarin.Views
         async void Save_Clicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "AddItem", Item);
+
             await Navigation.PopModalAsync();
         }
 

@@ -11,13 +11,37 @@
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
         <ToolbarItem Text="Save" Clicked="Save_Clicked" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
+            <Label Text="Add a new Item : " />
+            
             <Label Text="Text" FontSize="Medium" />
             <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
-            <Label Text="Description" FontSize="Medium" />
+            
+            <Label Text="Description and Tags" FontSize="Medium" />
             <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
+            
+            <Label Text="Price" FontSize="Medium" />
+            <Entry Text="{Binding Item.Price}" d:Text="Item name" FontSize="Small" />
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button Text="Save" Clicked="Save_Clicked" Grid.Column="0" BackgroundColor="Aquamarine"/>
+                <Button Text="Cancel" Clicked="Cancel_Clicked" Grid.Column="1"/>
+                
+            </Grid>
+            
+            <RelativeLayout>
+                <Image Source="xamarin_logo.png" />
+            </RelativeLayout>
+
+            <Button Text="Take a picture" />
         </StackLayout>
     </ContentPage.Content>
     

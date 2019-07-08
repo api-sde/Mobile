@@ -26,7 +26,7 @@ namespace SwiftShopXamarin.Views
         {
             InitializeComponent();
 
-            var item = new Item
+            var item = new ShoppingItem
             {
                 Text = "Item 1",
                 Description = "This is an item description."
