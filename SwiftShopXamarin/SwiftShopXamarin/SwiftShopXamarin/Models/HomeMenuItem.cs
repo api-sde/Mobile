@@ -7,7 +7,8 @@ namespace SwiftShopXamarin.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        Welcome
     }
     public class HomeMenuItem
     {

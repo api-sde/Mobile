@@ -20,8 +20,6 @@ namespace SwiftShopXamarin.Views
             InitializeComponent();
 
             MasterBehavior = MasterBehavior.Popover;
-
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -35,6 +33,9 @@ namespace SwiftShopXamarin.Views
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                        break;
+                    case (int)MenuItemType.Welcome:
+                        MenuPages.Add(id, new NavigationPage(new WelcomePage()));
                         break;
                 }
             }
