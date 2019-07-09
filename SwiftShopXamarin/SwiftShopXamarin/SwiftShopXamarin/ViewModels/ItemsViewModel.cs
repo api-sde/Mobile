@@ -27,6 +27,8 @@ namespace SwiftShopXamarin.ViewModels
                 Items.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
             });
+
+            //ToDo Suscribe ItemDetailPage
         }
 
         async Task ExecuteLoadItemsCommand()

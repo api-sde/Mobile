@@ -34,14 +34,20 @@
                 </Grid.RowDefinitions>
 
                 <Button Text="Save" Clicked="Save_Clicked" Grid.Column="0" />
-                <Button Text="Cancel" Clicked="Cancel_Clicked" Grid.Column="1" />
-                
-                <Image Source="xamarin_logo.png" Grid.Column="0" Grid.Row="1"/>
+                <Button Text="Cancel" Clicked="Cancel_Clicked" Grid.Column="2" />
+            </Grid>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-                <Button Text="Take a picture"  Grid.Column="0" Grid.Row="2"/>
+                <Image x:Name="PhotoImage" />
+                <Button x:Name="CameraButton" Text="Take Photo" Grid.Row="1" Clicked="CameraButton_Clicked" />
             </Grid>
 
-            
+
         </StackLayout>
     </ContentPage.Content>
     

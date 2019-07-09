@@ -14,6 +14,7 @@ namespace SwiftShopXamarin.Views
     public partial class ItemDetailPage : ContentPage
     {
         ItemDetailViewModel viewModel;
+        public ShoppingItem Item { get; set; }
 
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
@@ -34,6 +35,13 @@ namespace SwiftShopXamarin.Views
 
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
+        }
+
+        async void Delete_Clicked(object sender, EventArgs e)
+        {
+            MessagingCenter.Send(this, "DeleteItem", Item);
+
+            await Navigation.PopModalAsync();
         }
     }
 }
